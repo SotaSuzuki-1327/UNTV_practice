@@ -14,7 +14,7 @@ body { margin: 0; padding: 0; }
 <body>
 <div id="map"></div>
 <script>
-    mapboxgl.accessToken = 'pk.eyJ1IjoiZjFrdW5pIiwiYSI6ImNrdzJ4ZWhtNDBwaXAzMW1veXN5cGYwM2EifQ.-NTeimXFcbrFi2g5ZHDgjA';
+    mapboxgl.accessToken = 'pk.eyJ1IjoiY2F1Y2FzdXMxMzI3IiwiYSI6ImNreGQ4dGI3azEzeTkyd3RocXAzcmsyamgifQ.07pRnvJUXwJz2e3YLHfM8g';
     const map = new mapboxgl.Map({
         container: 'map', // container ID
         style: {
@@ -31,7 +31,7 @@ body { margin: 0; padding: 0; }
             },
             "d_yzone": {
                 "type": "vector",
-                "tiles": ["https://f1kuni.github.io/vetortile_website/d_yzone/{z}/{x}/{y}.pbf"
+                "tiles": ["https://sotasuzuki-1327.github.io/UNVT_practice/k_yzone/{z}/{x}/{y}.pbf"
             ],
             }
         },
@@ -42,10 +42,10 @@ body { margin: 0; padding: 0; }
             "minzoom": 0,
             "maxzoom": 18},
                    {
-            "id": "d_yzone",
+            "id": "k_yzone",
             "type": "fill",
-            "source": "d_yzone",
-            "source-layer": "d_yzone",
+            "source": "k_yzone",
+            "source-layer": "k_yzone",
             "paint": {"fill-color": "#962121"},
             "minzoom": 12,
             "maxzoom": 20
