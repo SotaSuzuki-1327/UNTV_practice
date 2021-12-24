@@ -1,1 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>UNVT_hackathon</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
+<style>
+body { margin: 0; padding: 0; }
+#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+</style>
+</head>
+<body>
+<div id="map"></div>
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiZjFrdW5pIiwiYSI6ImNrdzJ4ZWhtNDBwaXAzMW1veXN5cGYwM2EifQ.-NTeimXFcbrFi2g5ZHDgjA';
+    const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: {
+          "version": 8,
+        "sources": {
+            "t_pale": {
+                "type": "raster",
+                "tiles": [
+                "https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png"
+                ],
+                "tileSize": 256,
+                'attribution':
+                        'Map tiles by <a target="_top" rel="noopener" href="http://furuhashilab.com/">Furuhashi Lab.</a>, under <a target="_top" rel="noopener" href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a target="_top" rel="noopener" href="http://openstreetmap.org">OpenStreetMap</a>, under <a target="_top" rel="noopener" href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>'
+            },
+            "d_yzone": {
+                "type": "vector",
+                "tiles": ["https://f1kuni.github.io/vetortile_website/d_yzone/{z}/{x}/{y}.pbf"
+            ],
+            }
+        },
+        "layers": [{
+            "id": "t_pale",
+            "type": "raster",
+            "source": "t_pale",
+            "minzoom": 0,
+            "maxzoom": 18},
+                   {
+            "id": "d_yzone",
+            "type": "fill",
+            "source": "d_yzone",
+            "source-layer": "d_yzone",
+            "paint": {"fill-color": "#962121"},
+            "minzoom": 12,
+            "maxzoom": 20
+                   }
+                        ]
+                },
+    center: [139.767, 35.681],
+    zoom: 11
+        });
+</script>
+</body>
+</html>
 
